@@ -1,39 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
+    <meta charset="UTF-8">
     <title>Liqisui's blog</title>
-    <link rel="stylesheet" href="style.css">
-      <style>
-    body {
-      background-color: purple;
-     
-    }
-  </style>
+    <style>
+        body {
+            background-color: purple;
+            color: white; /* 所有默认字体颜色变成白色 */
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: pink;
+        }
+
+        .green-text {
+            color: #00aa88;
+        }
+
+        .big-text {
+            font-size: 50px;
+        }
+
+        nav a {
+            color: yellow;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
+
     <h1>我不好，世界！(´;ω;｀)</h1>
     <h1>欢迎来到我的网站！😊🌈🐱🍓✨</h1>
-<p style="color: #00aa88;"></p>
+
+    <p class="green-text big-text">这是绿色的大字体文字！</p>
 
     <form action="https://www.google.com/search" method="GET" target="_blank">
-  <input type="text" name="q" placeholder="朋友，请输入你的搜索内容" />
-  <button type="submit">好了，开始搜索吧</button>
-<p style="font-size: 50px;"></p>
-</form>
+        <input type="text" name="q" placeholder="朋友，请输入你的搜索内容" />
+        <button type="submit">好了，开始搜索吧</button>
+    </form>
 
+    <nav>
+        <a href="top.html">首页</a> |
+        <a href="about.html">关于我</a> |
+        <a href="contact.html">联系</a>
+    </nav>
 
-<nav>
-    <a href="top.html">首页</a> |
-    <a href="about.html">关于我</a> |
-    <a href="contact.html">联系</a>
-
-     
-    
-</nav>
     <p>欢迎来到我的第一个网站。</p>
-    <script src="script.js"></script>
 
-    <div class="container"></div>
-     
 </body>
 </html>
