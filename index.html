@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Liqisui's blog</title>
     <style>
+        /* 页面整体背景设置 */
         body {
+            margin: 0;
+            padding: 20px;
             background-color: purple;
-             background-image: url("IMG_1747.jpeg");
-            color: white; /* 所有默认字体颜色变成白色 */
+            background-image: url("IMG_1747.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
             font-family: sans-serif;
+            color: white;
             text-align: center;
         }
 
+        /* 内容容器，限制宽度并居中，半透明黑色背景提升可读性 */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* 标题样式 */
         h1 {
             color: pink;
+            font-size: 2.5rem;
+            margin: 20px 0;
         }
 
-        .green-text {
-            color: #00aa88;
-        }
-
-        .big-text {
-            font-size: 50px;
-        }
-
+        /* 导航链接 */
         nav a {
             color: yellow;
             margin: 0 10px;
@@ -31,40 +43,52 @@
             font-weight: bold;
         }
 
+        /* 输入框和按钮样式 */
         input, button {
             padding: 10px;
             font-size: 16px;
             margin-top: 10px;
+            border: none;
+            border-radius: 6px;
         }
 
+        /* 按钮颜色 */
+        button {
+            background-color: #00aa88;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #008066;
+        }
     </style>
 </head>
 <body>
+    <div class="content">
+        <h1>我不好，世界！(´;ω;｀)</h1>
+        <h1>Better Meになりたい(´;ω;｀)</h1>
+        <h1>欢迎来到我的学习记录网站！😊🌈🐱🍓✨</h1>
+        <h1>私の勉強記事の世界へようこそ！😊🌈🐱🍓✨</h1>
 
-    <h1>我不好，世界！(´;ω;｀)</h1>
-     <h1>Better Meになりたい(´;ω;｀)</h1>
-    <h1>欢迎来到我的学习记录网站！😊🌈🐱🍓✨</h1>
-      <h1>私の勉強記事の世界へようこそ！😊🌈🐱🍓✨</h1>
+        <form action="https://liqisui0206.github.io/vscode_test/aws.html" method="GET" target="_blank">
+            <input type="text" name="q" placeholder="朋友，请输入你的搜索内容哦" />
+            <button type="submit">好了，开始探寻之旅吧</button>
+        </form>
 
-    <form action="https://liqisui0206.github.io/vscode_test/aws.html" method="GET" target="_blank">
-        <input type="text" name="q" placeholder="朋友，请输入你的搜索内容哦" />
-        <button type="submit">好了，开始探寻之旅吧</button>
-    </form>
-
-    <nav>
-         |<a href="Aws.html">AWS関連記事</a> |
-        <a href="Azure.html">Azure関連記事</a> |
-        <a href="Math.html">数学関連記事</a>|
-            <a href="English.html">忘れないでください！英語様！！</a>|
-           <a href="Java.html">Java関連記事！！</a>|
         <nav>
-            <nav>
-      | <a href="top.html">首页</a> |
-        <a href="about.html">关于我</a> |
-        <a href="contact.html">联系</a>|
-    </nav>
+            | <a href="Aws.html">AWS関連記事</a> |
+            <a href="Azure.html">Azure関連記事</a> |
+            <a href="Math.html">数学関連記事</a> |
+            <a href="English.html">忘れないでください！英語様！！</a> |
+            <a href="Java.html">Java関連記事！！</a> |
+            | <a href="top.html">首页</a> |
+            <a href="about.html">关于我</a> |
+            <a href="contact.html">联系</a> |
+        </nav>
 
-    <p>欢迎来到我的第一个网站!!!</p>
-
+        <p>欢迎来到我的第一个网站!!!</p>
+    </div>
 </body>
 </html>
+
