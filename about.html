@@ -2,65 +2,35 @@
 <html>
 <head>
   <title>aboutme</title>
-  <style>
-    /* 整个页面的背景容器 */
-    .background-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background-image: url("忆江南.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    /* 动态光斑层，覆盖背景 */
-    .dynamic-layer {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4), transparent 30%),
-        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.4), transparent 20%);
-      animation: pulse 6s ease-in-out infinite alternate;
-      z-index: 1;
-    }
-
-    /* 内容层，显示文字在动态层之上 */
-    .content {
-      position: relative;
-      z-index: 2;
-      color: #222;
-      padding: 20px;
-    }
-
-    /* 动画 */
-    @keyframes pulse {
-      0% { opacity: 0.2; }
-      100% { opacity: 0.6; }
-    }
+        <style>
+        body {
+                  background-color: lightblue;
+      background-color: lightgreen;
+         background-image: url("sta-je-java.jpg");
+          background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+        }
   </style>
 </head>
 <body>
   <div class="background-container">
     <div class="dynamic-layer"></div>
     <div class="content">
-      <h1>~兴尽晚回舟，误入藕花深处~</h1>
-      <h1>~长河落日圆，大漠孤烟直~</h1>
-      <h1>~接天莲叶无穷碧，映日荷花别样红~</h1>
-      <h1>~我见青山多妩媚，料青山见我应如是~</h1>
-      <h1>~且听风吟~</h1>
-      <h1>~枯藤老树昏鸦，小桥流水人家~</h1>
-      <h1>~江南好，风景旧曾谙~</h1>
-      <h1>~日出江花红胜火，春来江水绿如蓝~</h1>
-      <h1>~能不忆江南~</h1>
-      <h1>~物是人非事事休，欲语泪先流~</h1>
-       <h1>~花自飘零水自流，一种相思，两处闲愁~</h1>
-             <h1>~花自飘零水自流，一种相思，两处闲愁~</h1>
-       <h1>~醉里挑灯看剑，梦回吹角连营~</h1>
+          <h1>~那些看了会让人心灵平静下来的诗词~</h1>
+      <h1>兴尽晚回舟，误入藕花深处</h1>
+      <h1>长河落日圆，大漠孤烟直</h1>
+      <h1>接天莲叶无穷碧，映日荷花别样红</h1>
+      <h1>我见青山多妩媚，料青山见我应如是</h1>
+      <h1>秋阴不散霜飞晚，留得枯荷听雨声</h1>
+      <h1>枯藤老树昏鸦，小桥流水人家</h1>
+      <h1>江南好，风景旧曾谙</h1>
+      <h1>日出江花红胜火，春来江水绿如蓝</h1>
+      <h1>能不忆江南</h1>
+      <h1>物是人非事事休，欲语泪先流</h1>
+             <h1>花自飘零水自流，一种相思，两处闲愁</h1>
+       <h1>醉里挑灯看剑，梦回吹角连营</h1>
       <nav>
         <a href="index.html">返回/back</a> |
         <a href="shiju.html">好诗！好诗！</a> 
