@@ -1,0 +1,599 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;CHARSET=SHIFT_JIS">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="Set-Cookie" content="cookie=set; path=/">
+<link rel="stylesheet" href="/parts/stylesheet/atit_arcbbs.css?2112032" type="text/css" media="all">
+<script type="text/javascript" src="/javascript/newmark.js"></script>
+<script type="text/javascript" src="/parts/javascript/common/jquery.js"></script>
+<script type="text/javascript" src="/parts/javascript/common/common.js?2112032"></script>
+
+<script type="text/javascript" src="/parts/javascript/adRequest_ait.js"></script>
+
+<script type="text/javascript">
+if(uacheck() == 'spv'){
+	const jslink = document.createElement('link');
+	jslink.href = '/parts/stylesheet/atit_arcbbs_spv.css';
+	jslink.rel = 'stylesheet';
+	jslink.type = 'text/css';
+	document.getElementsByTagName('head')[0].appendChild(jslink);
+};
+</script>
+
+<meta name="description" content="「javaでパッケージが存在しませんというエラーについて」に関する質問と回答の一覧です。（1） Java Solution － ＠IT">
+<title>「javaでパッケージが存在しませんというエラーについて」（1） Java Solution － ＠IT</title>
+</head>
+<body class="atitBBS" id="ftop">
+<div class="outBox">
+<a name="articletop"></a>
+<!-- WRAP -->
+<div id="wrap">
+<script type="text/javascript" src="/parts/javascript/adRequest_ait.js"></script>
+<div id="gnavi">
+<div id="gnaviOuter">
+<div id="gnaviInner">
+<div class="gnaviBtn gnaviBtn1"><a href="https://atmarkit.itmedia.co.jp/">TOP</a></div>
+<div class="gnaviBtn gnaviBtn10"><a href="https://atmarkit.itmedia.co.jp/ait/series/search/">連載一覧</a></div>
+<div class="gnaviBtn gnaviBtn2"><a href="https://atmarkit.itmedia.co.jp/ait/subtop/features/special/">＠IT Special</a></div>
+<div class="gnaviBtn gnaviBtn3"><a href="https://atmarkit.itmedia.co.jp/ait/subtop/features/seminar/">セミナー</a></div>
+<div class="gnaviBtn gnaviBtn4"><a href="https://atmarkit.itmedia.co.jp/ait/kw/atmarkit_ebook.html">eBook</a></div>
+<div class="gnaviBtn gnaviBtn7"><a href="https://el.jibun.atmarkit.co.jp/">ブログ</a></div>
+</div>
+</div>
+</div>
+<div id="header" class="gnavi-box">
+<div id="header_l"><a href="/index.html"><img src="/include/header/images/logo_header.gif" alt="アットマーク・アイティ　ITエキスパートのための問題解決メディア" width="92" height="64" style="border: 0px;"></a></div>
+<div id="header_r"><div id="search" class="searcht">
+
+<div id="cse-search-form" style="width: 100%;">Loading</div>
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'ja', style : google.loader.themes.V2_DEFAULT});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};
+    var orderByOptions = {};
+    orderByOptions['keys'] = [{label: '日付', key: 'date'},{label: '関連性', key: ''}];
+    customSearchOptions['enableOrderBy'] = true;
+    customSearchOptions['orderByOptions'] = orderByOptions;
+    var imageSearchOptions = {};
+    imageSearchOptions['layout'] = google.search.ImageSearch.LAYOUT_POPUP;
+    customSearchOptions['enableImageSearch'] = true;
+    customSearchOptions['imageSearchOptions'] = imageSearchOptions;
+    customSearchOptions['adoptions'] = {'layout': 'noTop'};
+    var customSearchControl = new google.search.CustomSearchControl(
+      '000492183644671384608:zpcmlmr1swi', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    var options = new google.search.DrawOptions();
+    options.setAutoComplete(true);
+    options.enableSearchboxOnly("http://www.google.com/cse?cx=000492183644671384608:zpcmlmr1swi");
+    customSearchControl.draw('cse-search-form', options);
+  }, true);
+</script>
+
+<style type="text/css">
+  input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    border-color: #D9D9D9;
+  }
+  input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+    border-color: #2F5BB7;
+    background-color: #357AE8;
+    background-image: none;
+    filter: none;
+    margin:0;
+  }
+</style>
+
+
+</div></div>
+<div id="header_ad"><!-- ad_start --><!-- ad_start_new -->
+<script language="JavaScript" type="text/javascript">
+   <!--
+   var pid="2075500280";
+   var locs="ITN";
+   var random=new Date();
+
+   var js_url='//dlv.itmedia.jp/adsv/v1?posall='+locs+'&id='+pid+'&t=js&rnd='+random.getTime();
+   document.write('<sc'+'ript language="JavaScript" type="text/javascript" src="'+js_url+'">');
+   document.write('</sc'+'ript>');
+   //-->
+</script>
+<noscript>
+ <iframe height=90 width=728 marginwidth=0 marginheight=0 hspace=0
+   vspace=0 frameborder=0 scrolling=no src="//dlv.itmedia.jp/adsv/v1?posall=ITN&id=2075500280">
+ </iframe>
+</noscript>
+<!-- ad_end_new -->
+<!-- ad_end -->
+<!-- ad_start --><!-- beacon.html --><!-- ad_end -->
+</div>
+</div>
+<div id="navibar"><div class="navibar_styl"><a href="http://www.atmarkit.co.jp/">＠IT総合トップ</a> &gt; <a href="/bbs/phpBB/">旧＠IT会議室</a> &gt;  <a href="viewforum.php?forum=12">Java Solution</a> &gt; javaでパッケージが存在しませんというエラーについて</div></div>
+<!-- MAIN -->
+<div id="main">
+<div id="mainCol">
+
+<!-- THREAD HEADSET -->
+<div id="headset">
+<div class="left">
+<div id="infoBox" class="outBox"><div class="inBox">
+</div></div>
+<script type="text/javascript">
+function encurifrm() {
+	location.assign('//www.atmarkit.co.jp/misc/search/bbs.html?cx=002351675112469469566:demaumch9sw&q=' + encodeURIComponent(document.qform02.q.value) + '&cof=FORID%3A9' + '&forum=Other');
+}
+</script>
+<div id="searchBBS" class="search-ftop"><div class="outBox"><div class="inBox">
+<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&lang=ja"></script>
+<form action="//www.atmarkit.co.jp/misc/search/bbs.html" id="cse-search-box" onsubmit="return false;" name="qform02">
+<input type="hidden" name="cx" value="002351675112469469566:demaumch9sw">
+	<input type="hidden" name="cof" value="FORID:9" />
+	<span>フォーラム内検索</span>
+	<input class="bt-serch" type="image" src="/parts/images/atit/bt_search.jpg" name="sa" alt="検索" value="検索" onclick="encurifrm();">
+	<input name="q" type="text" class="serchArea" size="38" value="" onkeypress="if (event.keyCode == 13) encurifrm();" >
+</form>
+<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&lang=ja"></script>
+</div></div></div>
+<!-- google_ad_section_start -->
+
+<div id="linkBox" class="outBox"><div class="inBox"><dl>
+<dt><span>＠IT 会議室 Indexリンク</span></dt>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=6&23933">Windows Server Insider</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=7&97617">Insider.NET</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=8&5716">System Insider</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=9&3911">XML & SOA</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=10&25588">Linux Square</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=11&7368">Master of IP Network</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=12&51135">Java Solution</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=14&2755">Security & Trust</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=26&11039">Database Expert</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=35&35"> RFID＋IC</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=28&1346">リッチクライアント & 帳票</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=47&68">Server ＆ Storage</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=48&80">Coding Edge</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=3&12785">＠ITクラブ Cafe</a></dd>
+<dd><a href="http://www.atmarkit.co.jp/bbs/phpBB/viewforum.php?forum=36&2815">VB業務アプリケーション開発研究</a></dd>
+</dl>
+<h3 style="font-size: 13px; width:100%; padding-bottom: 3px; margin-bottom: 2px; border-bottom: 3px solid #DDD; color: #444;">＠IT Special<span style="display: inline-block; float: right; font-size: 10px;">PR</span></h3>
+
+<!-- Cxense content widget: ＠IT PCV 記事下（文脈） AD * 2 （期間 1 ：20161005 開始） -->
+<div id="cx_8b623a9d4416ddbf08054e1a0c1ba581447e59ab" style="display:none"></div>
+<script type="text/javascript">
+    var cX = cX || {}; cX.callQueue = cX.callQueue || [];
+    cX.callQueue.push(['insertWidget', {
+        widgetId: '8b623a9d4416ddbf08054e1a0c1ba581447e59ab',
+        insertBeforeElementId: 'cx_8b623a9d4416ddbf08054e1a0c1ba581447e59ab',
+        width: '100%', height: 'auto', renderTemplateUrl: 'auto'
+    }]);
+
+    // Async load of cx.js
+    (function(d,s,e,t){e=d.createElement(s);e.type='text/java'+s;e.async='async';
+    e.src='http'+('https:'===location.protocol?'s://s':'://')+'cdn.cxense.com/cx.js';
+    t=d.getElementsByTagName(s)[0];t.parentNode.insertBefore(e,t);})(document,'script');
+</script>
+<!-- End of Cxense content widget -->
+</div></div>
+</div>
+<div class="right"><div id="crec">
+
+<dl>
+<dt>- PR -</dt>
+<dd style="height:300px;">
+<!-- AD --><!-- ad_start_new -->
+<script language="JavaScript" type="text/javascript">
+   <!--
+   var pid="2075500280";
+   var locs="ITR";
+   var random=new Date();
+
+   var js_url='//dlv.itmedia.jp/adsv/v1?posall='+locs+'&id='+pid+'&t=js&rnd='+random.getTime();
+   document.write('<sc'+'ript language="JavaScript" type="text/javascript" src="'+js_url+'">');
+   document.write('</sc'+'ript>');
+   //-->
+</script>
+<noscript>
+ <iframe height=300 width=300 marginwidth=0 marginheight=0 hspace=0
+   vspace=0 frameborder=0 scrolling=no src="//dlv.itmedia.jp/adsv/v1?posall=ITR&id=2075500280">
+ </iframe>
+</noscript>
+<!-- ad_end_new -->
+<!-- /AD -->
+
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+<!-- /THREAD HEADSET -->
+<div id="mainBox">
+<!-- MAINCONT -->
+
+<h1><span>javaでパッケージが存在しませんというエラーについて</span></h1>
+
+<div class="start ctrl">
+<span class="prev"></span>
+<span id="numb"><strong>1</strong></span>
+<span class="next"></span>
+</div>
+
+<table class="qaBox">
+<thead>
+<tr><th class="userName">投稿者</th><th class="cont">投稿内容</th></tr>
+</thead>
+<tbody><tr><th>
+<dl>
+<dt>わく</dt>
+<dd class="subName">ベテラン</dd>
+<dd>会議室デビュー日: 2004/07/13</dd>
+<dd>投稿数: 60</dd>
+<dd>お住まい・勤務地: 九州</dd>
+</dl>
+</th>
+<td>
+<div class="dateBox">投稿日時: 2007-09-11 08:51</div>
+お久しぶりです。
+<BR>久しぶりにjavaをしていたらパッケージについて困ってしまい
+<BR>ました。本を参考にしていたのですがどうしてもわからないので
+<BR>ご教授をお願いします。
+<BR>
+<BR>[バージョン]
+<BR>j2sdk1.4.1_03、Tomcat 4.1
+<BR>[エラー内容]
+<BR>Controller.java:9: パッケージ mypackage は存在しません。
+<BR>import mypackage.searchbeen;                ^
+<BR>Controller.java:14: searchbeen にアクセスできません。
+<BR>クラスファイル C:\\search\\searchbeen.class は不正です。
+<BR>クラスファイル mypackage.searchbeen に不正なクラスがあります。
+<BR>削除するか、クラスパスの正しいサブディレクトリにあるかを確認してください。
+<BR>                        searchbeen been =null;
+<BR>[ソース]-Controller.java-
+<BR>import javax.servlet.http.HttpServlet;
+<BR>import javax.servlet.http.HttpServletRequest;
+<BR>import javax.servlet.http.HttpServletResponse;
+<BR>import javax.servlet.ServletException;
+<BR>import java.io.IOException;
+<BR>import javax.servlet.RequestDispatcher;
+<BR>import javax.servlet.ServletContext;
+<BR>
+<BR>import mypackage.searchbeen;
+<BR>
+<BR>public class Controller extends HttpServlet{
+<BR>	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException ,IOException{
+<BR>
+<BR>			searchbeen been =null;
+<BR>			try{
+<BR>				been=(searchbeen)java.beans.Beans.instantiate(
+<BR>					this.getClass().getClassLoader(),&quot;mypackage.searchbeen&quot;);
+<BR>					been.setSearch1(req.getParameter(&quot;search1&quot;));
+<BR>			}catch(Exception ex){
+<BR>				ex.printStackTrace();
+<BR>			}
+<BR>
+<BR>			req.setAttribute(&quot;mybeen&quot;,been);
+<BR>
+<BR>			String target=&quot;/Search.jsp&quot;;
+<BR>			ServletContext context=getServletContext();
+<BR>			RequestDispatcher rd=context.getRequestDispatcher(target);
+<BR>			rd.forward(req,res);
+<BR>		}
+<BR>}
+<BR>
+<BR>-searchbeen.java-
+<BR>package mypackage;
+<BR>import java.io.*;
+<BR>
+<BR>public class searchbeen implements Serializable{
+<BR>	private String sea1=null;
+<BR>	private String seaht1=null;
+<BR>
+<BR>	private String BaseHtml=null;
+<BR>
+<BR>	public searchbeen(){
+<BR>		BaseHtml=&quot;http://www.google.co.jp/search?q=&quot;;
+<BR>	}
+<BR>
+<BR>	//Getter(検索キーワード)
+<BR>	public String  getSearch1(){
+<BR>		return sea1;
+<BR>	}
+<BR>
+<BR>	//Getter(検索ページ)
+<BR>	public String  getHtml1(){
+<BR>		return seaht1;
+<BR>	}
+<BR>
+<BR>	//Setter(検索キーワード＆検索ページ)
+<BR>	public void setSearch1(String se1){
+<BR>		sea1=se1;
+<BR>		seaht1=BaseHtml + se1;
+<BR>	}
+<BR>
+<BR>}
+</td></tr>
+<tr><th>
+<dl>
+<dt>nagise</dt>
+<dd class="subName">ぬし</dd>
+<dd>会議室デビュー日: 2006/05/19</dd>
+<dd>投稿数: 1141</dd>
+<dd></dd>
+</dl>
+</th>
+<td>
+<div class="dateBox">投稿日時: 2007-09-11 11:13</div>
+コンパイル時のエラーですか？
+<BR>クラスパスが通っていないのでは？
+</td></tr>
+<tr><th>
+<dl>
+<dt>わく</dt>
+<dd class="subName">ベテラン</dd>
+<dd>会議室デビュー日: 2004/07/13</dd>
+<dd>投稿数: 60</dd>
+<dd>お住まい・勤務地: 九州</dd>
+</dl>
+</th>
+<td>
+<div class="dateBox">投稿日時: 2007-09-11 12:38</div>
+nagiseさん
+<BR>返信ありがとうございます。
+<BR>
+<BR>クラスパスの件ですが、Beanの方は、コンパイルが通っているので
+<BR>クラスパスのせいではないとおもいます。
+<BR>
+<BR>何かお気づきの方がいましたらご教授願います。
+</td></tr>
+<tr><th>
+<dl>
+<dt>nagise</dt>
+<dd class="subName">ぬし</dd>
+<dd>会議室デビュー日: 2006/05/19</dd>
+<dd>投稿数: 1141</dd>
+<dd></dd>
+</dl>
+</th>
+<td>
+<div class="dateBox">投稿日時: 2007-09-11 12:41</div>
+<!-- BBCode Quote Start --><TABLE BORDER="0" ALIGN="CENTER" WIDTH="90%" CELLSPACING="0" CELLPADDING="0"><TR><TD WIDTH="5%" NOWRAP><FONT SIZE="-1">引用:</FONT></TD><TD WIDTH="95%"><HR SIZE="1" WIDTH="100%"></TD></TR><TR><TD COLSPAN="2"><FONT SIZE="-1"><BLOCKQUOTE>
+<BR>クラスファイル C:\\search\\searchbeen.class は不正です。
+<BR></BLOCKQUOTE></FONT><HR SIZE="1" WIDTH="100%"></TD></TR></TABLE><!-- BBCode Quote End -->
+<BR>パッケージの階層とフォルダ階層が違うのでは？
+<BR>mypackageというパッケージならmypackageフォルダに置かないと。
+</td></tr>
+<tr><th>
+<dl>
+<dt>わく</dt>
+<dd class="subName">ベテラン</dd>
+<dd>会議室デビュー日: 2004/07/13</dd>
+<dd>投稿数: 60</dd>
+<dd>お住まい・勤務地: 九州</dd>
+</dl>
+</th>
+<td>
+<div class="dateBox">投稿日時: 2007-09-11 12:57</div>
+すいませんでした。
+<BR>自分がパッケージというものを勘違いをしていました。
+<BR>
+<BR>パッケージのフォルダを作成したらコンパイルが成功しました。
+<BR>
+<BR>どうもありがとうございました。
+</td></tr>
+</tbody>
+</table>
+<div class="start ctrl">
+<span class="prev"></span>
+<span id="numb"><strong>1</strong></span>
+<span class="next"></span>
+</div>
+
+<!-- /MAINCONT -->
+
+</div>
+</div>
+<!-- NORMAL HEADSET --><!-- google_ad_section_end -->
+<div style="clear:both;"></div>
+<div id="logly-lift-4276961"></div>
+<script charset="UTF-8">
+  (function(){
+    var _lgy_lw = document.createElement("script");
+    _lgy_lw.type = "text/javascript";
+    _lgy_lw.charset = "UTF-8";
+    _lgy_lw.async = true;
+    _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4276961";
+    var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+    _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+  })();
+</script>
+<!-- ad_start_new -->
+
+<div id="logly-lift-4276957"></div>
+<script charset="UTF-8">
+  (function(){
+    var _lgy_lw = document.createElement("script");
+    _lgy_lw.type = "text/javascript";
+    _lgy_lw.charset = "UTF-8";
+    _lgy_lw.async = true;
+    _lgy_lw.src= (("https:" == document.location.protocol) ? "https://" : "http://")+"l.logly.co.jp/lift_widget.js?adspot_id=4276957";
+    var _lgy_lw_0 = document.getElementsByTagName("script")[0];
+    _lgy_lw_0.parentNode.insertBefore(_lgy_lw, _lgy_lw_0);
+  })();
+</script>
+<div id="btm-ttwpjob">
+<h4>スキルアップ／キャリアアップ<small>（JOB@IT）</small></h4>
+<script type="text/javascript" src="/parts/include/atit/btmtxt_job.txt"></script>
+</div>
+
+<!-- /adtag_0802/overture/ov_atmarkit.html -->
+
+
+<!-- ADTESTAD2 -->
+
+<!-- google_start -->
+<div class="colBoxGoogleAd">
+<div class="colBoxGoogleAdOuter">
+<div class="colBoxGoogleAdInnerLeft">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 05_06_atit_bbs_left -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-2201843946232317"
+     data-ad-slot="9142323441"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class="colBoxGoogleAdInnerRight">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 05_06_atit_bbs_right -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-2201843946232317"
+     data-ad-slot="1619056641"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="colBoxClear"></div>
+</div>
+<div class="colBoxClear"></div>
+</div>
+<!-- google_end -->
+
+<!-- FOOTER -->
+<div id="footer">
+<div class="footer_padding">
+<div class="footer_logo"><a href="/index.html"><img src="/include/footer/images/logo_footer.gif" width="83" height="40" border="0"></a></div>
+<div class="footer_txtlink">
+<a href="/index.html">＠ITトップ</a>｜
+<a href="http://www.atmarkit.co.jp/bbs/phpBB/">会議室</a>｜
+<a href="/aboutus/termofuse/termofuse.html">利用規約</a>｜
+<a href="http://corp.itmedia.co.jp/corp/privacy.html">プライバシーポリシー</a>｜
+</div>
+<br style="clear:both;">
+
+
+<br>
+<div id="copyright" style="font-size:10px ;">Copyright &copy; ITmedia, Inc. All Rights Reserved.<br>
+著作権はアイティメディア株式会社またはその記事の筆者に属します。<br>
+当サイトに掲載されている記事や画像などの無断転載を禁止します。
+</div>
+<!-- test -->
+<!-- GOOGLE ANALYTICS --><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7389445-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- /GOOGLE ANALYTICS END -->
+<script src="//fc.itmedia.co.jp/fpcookie?site_id=itm_"></script>
+<!-- Cxense script begin -->
+<script>
+var cX = cX || {}; cX.callQueue = cX.callQueue || [];
+cX.callQueue.push(['setSiteId', '1139602808826357187']);
+cX.callQueue.push(['sendPageViewEvent']);
+
+(function(d,s,e,t){e=d.createElement(s);e.type='text/java'+s;e.async='async';
+e.src='http'+('https:'===location.protocol?'s://s':'://')+'cdn.cxense.com/cx.js';
+t=d.getElementsByTagName(s)[0];t.parentNode.insertBefore(e,t);})(document,'script');
+</script>
+<!-- Cxense script end -->
+
+</div></div>
+<!-- /FOOTER -->
+
+</div>
+<!-- /MAIN -->
+</div>
+<!-- /WRAP -->
+</div>
+<!-- SiteCatalyst code version: H.2.
+Copyright 1997-2005 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript" src="/javascript/s_code.js"></script>
+<script language="JavaScript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+function $() {
+  var elements = new Array();
+  for (var i = 0; i < arguments.length; i++) {
+    var element = arguments[i];
+    if (typeof element == 'string')
+      element = document.getElementById(element);
+    if (arguments.length == 1)
+      return element;
+    elements.push(element);
+  }
+  return elements;
+}
+s.pageName=document.URL.replace( /(\?|#).*$/, '' );
+s.server="www.atmarkit.co.jp"
+s.channel="atmarkIT Java Solution BBS"
+s.pageType=""
+s.hier1="root,atmarkit,atit,java,bbs,200901"
+s.hier2="atmarkit,atit,java,bbs,200901"
+s.hier3="atit,java,bbs,200901"
+s.prop1=document.URL.replace( /(\?|#).*$/, '' );
+s.prop2="root,atmarkit,atit,java,bbs,200901"
+if ( $('update') == undefined )
+  s.prop3='';
+else
+  s.prop3=$('update').innerHTML.replace(/\d+分\s更新/,"");
+if ( $('byline') == undefined )
+  s.prop4=''
+else
+  s.prop4=$('byline').innerHTML.replace(/<b>|<\/b>/ig,'').replace(/\[|\]/g,'');
+/* s.prop5 : ad link name reserves */
+s.prop5=""
+s.prop6="atit"
+s.prop7="atit,java"
+s.prop8=document.title
+s.prop9=navigator.userAgent
+s.prop10=document.URL.replace( /(\?|#).*$/, '' );
+/* s.prop13 : document.URL reserves */
+
+/* E-commerce Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events="event3"
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3=""
+s.eVar4=""
+s.eVar5=""
+s.prop20="＠IT（CORE）";
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.2. -->
+<!-- claria tag start -->
+<!-- claria tag end -->
+
+<!-- mitag -->
+
+
+<!-- itmdp start -->
+<script src="/js/itmdp_code.js"></script>
+<script>
+itmdp.id = '2075500280';
+itmdp.x_dp = 'root,atmarkit,atit,java,bbs,200901'; // ドメインパス
+itmdp.x_ch = 'atit'; // チャンネル名
+itmdp.x_sch = 'atit,java'; // サブチャンネル名
+var itm_pageview = itmdp.pageview();
+</script>
+<!-- itmdp end -->
+</body>
+</html>
