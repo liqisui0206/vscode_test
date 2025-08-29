@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AWS知識</title>
+        <style>
+        body {
+                  background-color: lightblue;
+      background-color: lightgreen;
+         background-image: url("unnamed.jpg");
+          background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+        }
+              h1 {
+            color: green;
+           
+  font-size: 20px; 
+        }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <div class="dynamic-layer"></div>
+    <div class="content">
+          <h1>背景：在一家企业中，存在着一个Amazon lex，负责和用户沟通，是一个客服机器人的角色。Lex里面有一些预设问题，但数量非常少，因此企业需要将Lex与其他服务联系起来，力求给到用户一个完美的回答体验。
+要求：必须要用到AWS Bedrock。
+设计：首先构筑一个Lambda，并写一段可以调用数据的Python，调用对象是AWS Kendra。当Lex收到用户问题，却无法回答时，此问题被传至Lambda，Lambda启动Python，调取Kendra。Kendra则是与S3相连的，S3里存放着企业内部的产品数据。Kendra带着Lambda里传来的问题关键词，拿着这个关键词去S3里找数据，找到有关联的数据后，传给Lambda。
+接收到Kendra里传回来的data后，Lambda此时将会再次启动Python，将用户抛过来的疑问和Kendra里拿到的关联data全部投喂给Bedrock。BedRock基于所接续的大型AI，claude也好，Deepseek也好，基于此关联数据上生成可靠答案。并将答案返还给Lambda。之后再通过Lex传递给用户。
+总结:这是一个典型的RAG系统，先从企业知识库中检索相关内容，再用生成式 AI来回答问题。即不是直接生成，而是先检索再生成。
+而AWSBedrock可以类比为一个多功能插座，你可以想象它有多种插口，包括USB，三孔，两孔。USB的插口接claude，两孔接Copilot，三孔接Deepseek，分别是生成文字，图片，视频等用途。
+有人可能会疑惑了，那为什么不直接用这些生成AI，还非要加个Bedrock呢？
+事实上，Bedrock可以保护企业机密数据，所以企业在使用外部的AI时最好需要加上一个保护壳——Bedrock。
+另外如果想一次性调试多种AI，并比对结果，Bedrock是最好的选择。
+还可以加入企业自己的数据或业务逻辑，让模型更懂企业需求。</h1>
+      <nav>
+        <a href="index.html">返回首页</a> |
+
+      </nav>
+      <p>ご覧いただき誠にありがとう⑤ざいましゅた、またね(笔芯)</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
